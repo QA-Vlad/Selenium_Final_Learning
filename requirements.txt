@@ -37,3 +37,4 @@ urllib3==2.2.1
 wheel==0.43.0
 wsproto==1.2.0
 zipp==3.18.1
+pyperclip~=1.8.2
