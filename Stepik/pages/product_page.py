@@ -8,9 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-link = "https://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
-
-
 class PageObject(BasePage):
 
     # Метод для проверки наличия кнопки корзины и клика на неё
