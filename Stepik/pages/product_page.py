@@ -74,3 +74,12 @@ class PageObject(BasePage):
         self.check_card_add_message()
         self.check_basket_price_equals_book_price()
 
+    # Проверка того что элемент не появился за определённо время (отрицательное тестирование)
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.BOOK_ADD_GOOD), \
+            "Появилось сообщение об успехи, но не должно было"
+
+    # Проверка того что элемент пропал за определённо время (отрицательное тестирование)
+    def should_disappear_element(self):
+        assert self.is_disappeared(*ProductPageLocators.BOOK_ADD_GOOD), "Сообщение об успехи не пропало"
+
