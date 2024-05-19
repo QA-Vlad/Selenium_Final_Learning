@@ -6,6 +6,8 @@ class MainPageLocators():
 
 
 class BasePageLocators():
+    USER_ICON = (By.CLASS_NAME, "icon-user")
+    BASKET_LINK = (By.CSS_SELECTOR, "span.btn-group > a.btn-default")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
@@ -13,6 +15,10 @@ class BasePageLocators():
 class LoginPageLocators():
     LOGIN_FORM = (By.ID, "login_form")
     REGISTER_FORM = (By.ID, "register_form")
+    EMAIL_REG_FORM = (By.NAME, "registration-email")
+    PASSWORD_REG_FORM = (By.NAME, "registration-password1")
+    AGAIN_PASSWORD_REG_FORM = (By.NAME, "registration-password2")
+    SUBMIT_REG_FORM = (By.NAME, "registration_submit")
 
 
 class ProductPageLocators():
@@ -24,4 +30,6 @@ class ProductPageLocators():
     BASKET_TOTAL = (By.CSS_SELECTOR, ".basket-mini.pull-right")  # Итоговая цена товаров в корзине
 
 
-
+class BasketPageLocators():
+    BASKET_NOT_EMPTY = (By.CLASS_NAME,  "basket-items")  # Когда корзина не пуста
+    BASKET_EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p > a")  # Когда корзина пуста и есть сообщение об этом

@@ -1,9 +1,6 @@
-from selenium.webdriver.common.by import By
-
+from faker import Faker
 from Stepik.pages.base_page import BasePage
-from Stepik.pages.locators import LoginPageLocators
-
-link = "https://selenium1py.pythonanywhere.com/ru/accounts/login"
+from Stepik.pages.locators import LoginPageLocators, BasePageLocators
 
 
 class LoginPage(BasePage):
@@ -27,8 +24,18 @@ class LoginPage(BasePage):
 
     #  Находит ссылку перехода на страницу входа, кликает на нее, переключается на всплывающее окно и принимает его.
     def go_to_login_page(self):
-        link = self.browser.find_element(By.CSS_SELECTOR, "#login_link")
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
         alert = self.browser.switch_to.alert
         alert.accept()
-        
+
+    # Метод регистрации на сайте с помощью фейкера
+    def register_new_user(self):
+        fake = Faker()
+        self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
+        self.browser.find_element(*LoginPageLocators.EMAIL_REG_FORM).send_keys(fake.email())
+        password = fake.password()
+        self.browser.find_element(*LoginPageLocators.PASSWORD_REG_FORM).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.AGAIN_PASSWORD_REG_FORM).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.SUBMIT_REG_FORM).click()
+

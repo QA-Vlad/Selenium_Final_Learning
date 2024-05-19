@@ -1,7 +1,5 @@
 import re
-
 from selenium.common import TimeoutException
-from selenium.webdriver.common.by import By
 from Stepik.pages.base_page import BasePage
 from Stepik.pages.locators import ProductPageLocators
 from selenium.webdriver.support.ui import WebDriverWait
