@@ -11,7 +11,7 @@
 
 
 
-## Установка проекта и запуск проекта:
+## Установка проекта:
 1. Клонируйте репозиторий:
     ```bash
     git clone https://github.com/your_username/your_repository.git
