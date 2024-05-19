@@ -20,6 +20,7 @@
     ```bash
     pip install -r requirements.txt
     ```
+3. Все тесты ищите в папке Stepik
 
 ## Контакты
 Если у вас есть вопросы, вы можете связаться со мной через мой [![](https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=%20&style=flat&color=blue&labelColor=5c5c5c)](https://www.linkedin.com/in/vladlen-kuznetcov/)
