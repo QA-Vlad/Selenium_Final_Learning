@@ -56,11 +56,3 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page.should_be_basket_empty_message()
 
 
-# Тест перехода в корзину со страницы товара и проверка её пустоты
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = "https://selenium1py.pythonanywhere.com/ru/catalogue/applied-cryptography_200"
-    page = BasketPage(browser, link)
-    page.open()
-    page.go_to_basket_page()
-    page.should_not_be_product_in_basket()
-    page.should_be_basket_empty_message()
